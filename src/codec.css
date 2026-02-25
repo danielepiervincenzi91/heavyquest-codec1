@@ -1,0 +1,125 @@
+/* ===== BASE ===== */
+
+body {
+  margin: 0;
+  background-color: #06110c;
+  font-family: 'Rajdhani', sans-serif;
+  color: #b7ffcc;
+  overflow-x: hidden;
+}
+
+/* Scanlines CRT */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,100,0.04),
+    rgba(0,255,100,0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ===== HEADER ===== */
+
+.codec-header {
+  padding: 16px 24px;
+  background: linear-gradient(to right, #071a12, #0d2a1d);
+  border-bottom: 2px solid #00ff66;
+  letter-spacing: 4px;
+  font-weight: 600;
+  text-shadow: 0 0 10px #00ff66;
+}
+
+/* ===== MAIN FRAME ===== */
+
+.codec-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.codec-frame {
+  width: 420px;
+  border: 2px solid #00ff66;
+  background-color: #081a12;
+  box-shadow: 0 0 25px rgba(0,255,100,0.25);
+  padding: 24px;
+  position: relative;
+}
+
+/* corner accent */
+.codec-frame::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 30px;
+  height: 6px;
+  background: #00ff66;
+}
+
+/* ===== TITLE ===== */
+
+.codec-title {
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 5px;
+  font-size: 18px;
+  text-shadow: 0 0 12px #00ff66;
+}
+
+/* ===== GRID HUD ===== */
+
+.codec-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+
+.stat-card {
+  border: 2px solid #00ff66;
+  background-color: #081a12;
+  padding: 16px;
+  position: relative;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 18px;
+  height: 5px;
+  background: #00ff66;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #4e7f63;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 30px;
+  color: #00ff66;
+  text-shadow: 0 0 14px #00ff66;
+}
+
+/* ===== FOOTER STATUS BAR ===== */
+
+.codec-status {
+  margin-top: 28px;
+  padding-top: 10px;
+  border-top: 1px solid #0f3d28;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #3e6b55;
+  text-align: center;
+}
