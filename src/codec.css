@@ -156,3 +156,35 @@ body::after {
   color: #3e6b55;
   text-align: center;
 }
+
+/* ===== NAVIGATION ===== */
+
+.codec-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 14px 0;
+  border-bottom: 1px solid #0f3d28;
+}
+
+.codec-nav-link {
+  color: #4e7f63;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+.codec-nav-link.active {
+  color: #00ff66;
+  text-shadow: 0 0 10px #00ff66;
+}
+
+/* ===== INPUT ===== */
+
+.codec-input {
+  width: 100%;
+  background: #081a12;
+  border: 1px solid #00ff66;
+  color: #00ff66;
+  padding: 6px;
+  font-family: 'Rajdhani', sans-serif;
+}
