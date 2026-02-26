@@ -1,7 +1,14 @@
+import { useState } from "react";
 import StatCard from "./components/StatCard";
-import { weeklyData } from "./data/weeklyMock";
+import { weeklyDataList } from "./data/weeklyMock";
 
 function App() {
+  const [selectedWeekIndex, setSelectedWeekIndex] = useState(
+    weeklyDataList.length - 1
+  );
+
+  const selectedWeek = weeklyDataList[selectedWeekIndex];
+
   return (
     <>
       <header className="codec-header">
@@ -15,23 +22,47 @@ function App() {
             WEEKLY STATUS REPORT
           </h2>
 
+          {/* Week Selector */}
+          <div style={{ marginBottom: "20px", textAlign: "center" }}>
+            <select
+              value={selectedWeekIndex}
+              onChange={(e) =>
+                setSelectedWeekIndex(Number(e.target.value))
+              }
+              style={{
+                background: "#081a12",
+                color: "#00ff66",
+                border: "1px solid #00ff66",
+                padding: "6px 10px",
+                fontFamily: "Rajdhani",
+                letterSpacing: "2px",
+              }}
+            >
+              {weeklyDataList.map((week, index) => (
+                <option key={week.weekId} value={index}>
+                  {week.weekId}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div className="codec-grid">
 
             <StatCard
               label="AVG BODYWEIGHT"
-              value={`${weeklyData.avgWeight.toFixed(1)} kg`}
+              value={`${selectedWeek.avgWeight.toFixed(1)} kg`}
               highlight
             />
 
             <StatCard
               label="DELTA"
-              value={`${weeklyData.delta > 0 ? "+" : ""}${weeklyData.delta.toFixed(1)} kg`}
+              value={`${selectedWeek.delta > 0 ? "+" : ""}${selectedWeek.delta.toFixed(1)} kg`}
               highlight
             />
 
             <StatCard
               label="TRAINING SESSIONS"
-              value={`${weeklyData.sessions}`}
+              value={`${selectedWeek.sessions}`}
             />
 
           </div>
