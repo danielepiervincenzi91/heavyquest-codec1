@@ -3,11 +3,14 @@ import StatCard from "./components/StatCard";
 import { weeklyDataList } from "./data/weeklyMock";
 
 function App() {
+  // Mostra solo ultime 3 settimane
+  const visibleWeeks = weeklyDataList.slice(-3);
+
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(
-    weeklyDataList.length - 1
+    visibleWeeks.length - 1
   );
 
-  const selectedWeek = weeklyDataList[selectedWeekIndex];
+  const selectedWeek = visibleWeeks[selectedWeekIndex];
 
   return (
     <>
@@ -24,7 +27,7 @@ function App() {
 
           {/* Week Selector */}
           <div className="codec-week-selector">
-            {weeklyDataList.map((week, index) => (
+            {visibleWeeks.map((week, index) => (
               <button
                 key={week.weekId}
                 onClick={() => setSelectedWeekIndex(index)}
