@@ -1,3 +1,6 @@
+import StatCard from "./components/StatCard";
+import { weeklyData } from "./data/weeklyMock";
+
 function App() {
   return (
     <>
@@ -14,20 +17,22 @@ function App() {
 
           <div className="codec-grid">
 
-            <div className="stat-card">
-              <div className="stat-label">AVG BODYWEIGHT</div>
-              <div className="stat-value">82.4 kg</div>
-            </div>
+            <StatCard
+              label="AVG BODYWEIGHT"
+              value={`${weeklyData.avgWeight.toFixed(1)} kg`}
+              highlight
+            />
 
-            <div className="stat-card">
-              <div className="stat-label">DELTA</div>
-              <div className="stat-value">-0.3 kg</div>
-            </div>
+            <StatCard
+              label="DELTA"
+              value={`${weeklyData.delta > 0 ? "+" : ""}${weeklyData.delta.toFixed(1)} kg`}
+              highlight
+            />
 
-            <div className="stat-card">
-              <div className="stat-label">TRAINING SESSIONS</div>
-              <div className="stat-value">3</div>
-            </div>
+            <StatCard
+              label="TRAINING SESSIONS"
+              value={`${weeklyData.sessions}`}
+            />
 
           </div>
 
