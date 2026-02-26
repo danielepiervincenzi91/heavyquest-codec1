@@ -23,27 +23,18 @@ function App() {
           </h2>
 
           {/* Week Selector */}
-          <div style={{ marginBottom: "20px", textAlign: "center" }}>
-            <select
-              value={selectedWeekIndex}
-              onChange={(e) =>
-                setSelectedWeekIndex(Number(e.target.value))
-              }
-              style={{
-                background: "#081a12",
-                color: "#00ff66",
-                border: "1px solid #00ff66",
-                padding: "6px 10px",
-                fontFamily: "Rajdhani",
-                letterSpacing: "2px",
-              }}
-            >
-              {weeklyDataList.map((week, index) => (
-                <option key={week.weekId} value={index}>
-                  {week.weekId}
-                </option>
-              ))}
-            </select>
+          <div className="codec-week-selector">
+            {weeklyDataList.map((week, index) => (
+              <button
+                key={week.weekId}
+                onClick={() => setSelectedWeekIndex(index)}
+                className={`codec-week-button ${
+                  index === selectedWeekIndex ? "active" : ""
+                }`}
+              >
+                {week.weekId}
+              </button>
+            ))}
           </div>
 
           <div className="codec-grid">

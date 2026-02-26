@@ -26,12 +26,14 @@ body::after {
 /* ===== HEADER ===== */
 
 .codec-header {
-  padding: 16px 24px;
+  padding: 18px 24px;
   background: linear-gradient(to right, #071a12, #0d2a1d);
   border-bottom: 2px solid #00ff66;
-  letter-spacing: 4px;
-  font-weight: 600;
-  text-shadow: 0 0 10px #00ff66;
+  letter-spacing: 6px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 12px #00ff66;
+  font-size: 20px;
 }
 
 /* ===== MAIN FRAME ===== */
@@ -72,7 +74,39 @@ body::after {
   text-shadow: 0 0 12px #00ff66;
 }
 
-/* ===== GRID HUD ===== */
+/* ===== WEEK SELECTOR ===== */
+
+.codec-week-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.codec-week-button {
+  background-color: #081a12;
+  border: 1px solid #0f3d28;
+  color: #4e7f63;
+  padding: 6px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.codec-week-button:hover {
+  border-color: #00ff66;
+  color: #00ff66;
+}
+
+.codec-week-button.active {
+  border: 1px solid #00ff66;
+  color: #00ff66;
+  box-shadow: 0 0 8px rgba(0,255,100,0.4);
+}
+
+/* ===== GRID ===== */
 
 .codec-grid {
   display: flex;
@@ -108,11 +142,10 @@ body::after {
 
 .stat-value {
   font-size: 30px;
-  color: #00ff66;
-  text-shadow: 0 0 14px #00ff66;
+  text-shadow: 0 0 14px currentColor;
 }
 
-/* ===== FOOTER STATUS BAR ===== */
+/* ===== STATUS BAR ===== */
 
 .codec-status {
   margin-top: 28px;
