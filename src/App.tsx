@@ -51,18 +51,25 @@ function App() {
             <StatCard
               label="AVG BODYWEIGHT"
               value={`${selectedWeek.avgWeight.toFixed(1)} kg`}
-              highlight
+              variant="neutral"
             />
 
             <StatCard
               label="DELTA"
               value={`${selectedWeek.delta > 0 ? "+" : ""}${selectedWeek.delta.toFixed(1)} kg`}
-              highlight
+              variant={
+                selectedWeek.delta < 0
+                  ? "positive"
+                  : selectedWeek.delta > 0
+                  ? "negative"
+                  : "neutral"
+              }
             />
 
             <StatCard
               label="TRAINING SESSIONS"
               value={`${selectedWeek.sessions}`}
+              variant="neutral"
             />
 
           </div>

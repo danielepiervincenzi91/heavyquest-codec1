@@ -1,20 +1,21 @@
 type StatCardProps = {
     label: string;
     value: string;
-    highlight?: boolean;
+    variant?: "positive" | "negative" | "neutral";
   };
   
-  function StatCard({ label, value, highlight }: StatCardProps) {
+  function StatCard({ label, value, variant }: StatCardProps) {
+    let color = "#00ff66";
+  
+    if (variant === "negative") color = "#ff3b3b";
+    if (variant === "neutral") color = "#b7ffcc";
+  
     return (
       <div className="stat-card">
         <div className="stat-label">{label}</div>
         <div
           className="stat-value"
-          style={
-            highlight
-              ? { color: "#00ff66", textShadow: "0 0 14px #00ff66" }
-              : undefined
-          }
+          style={{ color, textShadow: `0 0 14px ${color}` }}
         >
           {value}
         </div>
