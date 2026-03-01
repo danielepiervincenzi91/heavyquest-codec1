@@ -1,8 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD-0Lk31NeyO_R10VW5WSHDEsuD3aOx93w",
+import { getFirestore } from "firebase/,
   authDomain: "com-heavyquest-app.firebaseapp.com",
   projectId: "com-heavyquest-app",
   storageBucket: "com-heavyquest-app.firebasestorage.app",
